@@ -19,17 +19,21 @@ const renderSuccess = () => {
     $('.option2').text('');
     $('.option3').text('');
     $('.option4').text('');
-    if (score >= 50) {
-        $('<p>Congrats!!!</p>').appendTo('.question-question');
+    if (score >= 30) {
+        $('<p>Congrats!!!</p>').appendTo('.question-number');
+        $('.question-question').text('Your score is ' + (score) + '/' + '50')
+        $('<img src="https://bit.ly/2w9zjRY">').appendTo('.question-options');
     }
     else {
-        $('<p> Try Again!')
+        $('.question-question').text('Your score is ' + (score) + '/' + '50')
+        $('<p> Try Again,</p>').appendTo('.question-question');
+        $('<img src="https://bit.ly/2noeXl8">').appendTo('.question-options');
     }
 }
 
 const renderQuestion = (qIndex) => {
     let question = selectedQuestions[qIndex];
-    $('.question-number').text('que' + (qIndex + 1));
+    $('.question-number').text('Question' + (qIndex + 1));
     $('.question-question').text(question.question);
     $('.option1').text('');
     $('.option2').text('');
